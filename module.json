@@ -1,8 +1,8 @@
 {
   "id": "desperate-measures",
-  "title": "Desperate Measures",
+  "title": "YarpenArt: Desperate Measures",
   "description": "Implementation of the Desperate Measures homebrew mechanic for the D&D 5e system in Foundry Virtual Tabletop.",
-  "version": "0.4.20",
+  "version": "0.4.21",
   "authors": [
     {
       "name": "YarpenArt",

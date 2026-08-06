@@ -7,6 +7,8 @@ import { DesperateManager }
 import { t }
   from "../i18n.js";
 
+const LegacyDialog = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
+
 export class SpellSlotDialog {
   static async open(actor, pendingEffect) {
     if (!actor || !pendingEffect) {
@@ -79,7 +81,7 @@ export class SpellSlotDialog {
       </div>
     `;
 
-    const dialog = new Dialog({
+    const dialog = new LegacyDialog({
       title: t("slots.recoverTitle", {
         actor: actor.name
       }),

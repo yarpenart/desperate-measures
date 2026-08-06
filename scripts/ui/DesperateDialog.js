@@ -13,6 +13,8 @@ import {
   deathSaveFailureLabel
 } from "../i18n.js";
 
+const LegacyDialog = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
+
 export class DesperateDialog {
   static open(actor) {
     if (!actor) {
@@ -29,7 +31,7 @@ export class DesperateDialog {
     const content =
       this.createDialogContent(actor, failures);
 
-    const dialog = new Dialog({
+    const dialog = new LegacyDialog({
       title: `Desperate Measures — ${actor.name}`,
 
       content,
@@ -200,7 +202,7 @@ export class DesperateDialog {
 
     if (!measure) return;
 
-    const confirmed = await Dialog.confirm({
+    const confirmed = await LegacyDialog.confirm({
       title: t("dialog.confirmTitle"),
 
       content: `

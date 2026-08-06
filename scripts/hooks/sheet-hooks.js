@@ -6,6 +6,11 @@ import { MODULE_ID }
 
 export function registerSheetHooks() {
   Hooks.on(
+    "renderCharacterActorSheet",
+    renderDesperatePanel
+  );
+
+  Hooks.on(
     "renderActorSheetV2",
     renderDesperatePanel
   );

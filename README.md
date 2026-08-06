@@ -1,6 +1,6 @@
 # Desperate Measures
 
-Critical Role-inspired Desperate Measures module for Foundry VTT v13 and D&amp;D5e.
+Critical Role-inspired Desperate Measures module for Foundry VTT v14 Build 365 and D&amp;D5e 5.3.3.
 
 ## Version 0.4.20
 

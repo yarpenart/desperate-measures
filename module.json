@@ -2,7 +2,7 @@
   "id": "desperate-measures",
   "title": "YarpenArt: Desperate Measures",
   "description": "Implementation of the Desperate Measures homebrew mechanic for the D&D 5e system in Foundry Virtual Tabletop.",
-  "version": "0.4.21",
+  "version": "0.4.22",
   "authors": [
     {
       "name": "YarpenArt",
@@ -10,17 +10,18 @@
     }
   ],
   "compatibility": {
-  "minimum": "13",
-  "verified": "13"
-},
+    "minimum": "14",
+    "verified": "14.365",
+    "maximum": "14"
+  },
 "relationships": {
   "systems": [
     {
       "id": "dnd5e",
       "type": "system",
       "compatibility": {
-        "minimum": "4.0.0",
-        "verified": "5.3.0"
+        "minimum": "5.3.3",
+        "verified": "5.3.3"
       }
     }
   ]
@@ -38,7 +39,7 @@
       "path": "lang/en.json"
     }
   ],
-  "url": "https://github.com/yarpenart/desperate-measures2",
-  "manifest": "https://github.com/yarpenart/desperate-measures2/releases/latest/download/module.json",
-  "download": "https://github.com/yarpenart/desperate-measures2/releases/latest/download/desperate-measures.zip"
+  "url": "https://github.com/yarpenart/desperate-measures",
+  "manifest": "https://github.com/yarpenart/desperate-measures/releases/latest/download/module.json",
+  "download": "https://github.com/yarpenart/desperate-measures/releases/latest/download/desperate-measures.zip"
 }

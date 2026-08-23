@@ -1,28 +1,61 @@
 :where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog) {
-  --desperate-window-text: #f5eeee;
-  --desperate-window-muted: #cbbfc0;
-  --desperate-accent-text: #ef8e8e;
+  --desperate-window-text: #e9edf5;
+  --desperate-window-muted: #aab3c5;
+  --desperate-window-panel: #151923;
+  --desperate-window-panel-2: #202636;
+  --desperate-window-control: #0e1219;
+  --desperate-window-line: #3b4356;
+  --desperate-accent-text: #ff9299;
+  --desperate-accent: #b8424c;
+  --desperate-accent-bright: #e26770;
   color: var(--desperate-window-text);
   color-scheme: dark;
 }
 
-body:has(#interface.theme-light) :where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog) {
-  --desperate-window-text: #2f2525;
-  --desperate-window-muted: #685b5c;
-  --desperate-accent-text: #7b1515;
-  color-scheme: light;
+:is(.window-app, .application):has(.desperate-measures-dialog) .window-content,
+:is(.window-app, .application):has(.desperate-measures-confirm) .window-content,
+:is(.window-app, .application):has(.desperate-slot-dialog) .window-content {
+  color: #e9edf5;
+  background:
+    radial-gradient(circle at 90% 0%, rgb(184 66 76 / 16%), transparent 38%),
+    linear-gradient(145deg, #10131a, #191e29 65%, #11151d) !important;
+  scrollbar-color: #b8424c #11151d;
 }
 
-body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog) {
-  --desperate-window-text: #f5eeee;
-  --desperate-window-muted: #cbbfc0;
-  --desperate-accent-text: #ef8e8e;
-  color-scheme: dark;
+:is(.window-app, .application):has(.desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
+  :where(.dialog-buttons, footer) button {
+  border: 1px solid #485168;
+  color: #e9edf5;
+  background: #202636;
+  box-shadow: none;
+}
+
+:is(.window-app, .application):has(.desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
+  :where(.dialog-buttons, footer) button:hover:not(:disabled),
+:is(.window-app, .application):has(.desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
+  :where(.dialog-buttons, footer) button:focus-visible:not(:disabled) {
+  border-color: #e26770;
+  color: #fff;
+  background: #30232c;
 }
 
 :where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
-  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea, button) {
+  :where(h1, h2, h3, h4, label, strong, span, p, small) {
+  color: inherit;
+}
+
+:where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
+  :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  border: 1px solid #485168;
   color: var(--desperate-window-text);
+  background: var(--desperate-window-control);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 35%);
+}
+
+:where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
+  select option {
+  color: var(--desperate-window-text);
+  background: var(--desperate-window-control);
 }
 
 :where(.desperate-measures-panel, .desperate-measures-dialog, .desperate-measures-confirm, .desperate-slot-dialog)
@@ -35,15 +68,12 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
   margin: 12px;
   padding: 12px;
 
-  border: 2px solid #7b1515;
+  border: 2px solid #89343c;
   border-radius: 8px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(110, 12, 12, 0.18),
-      rgba(20, 5, 5, 0.08)
-    );
+    radial-gradient(circle at 100% 0, rgb(184 66 76 / 14%), transparent 40%),
+    linear-gradient(145deg, #151923, #10131a);
 
   box-shadow:
     inset 0 0 12px rgba(120, 0, 0, 0.18);
@@ -93,20 +123,26 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 }
 
 .desperate-measures-skulls [data-marked="false"] {
+  color: var(--desperate-window-muted);
   font-size: 0.7rem;
-  opacity: 0.35;
+  opacity: 0.65;
 }
 
 .desperate-measures-open {
   width: 100%;
   margin-top: 10px;
 
+  border: 1px solid #30384a;
+  color: #8790a1;
+  background: #191e29;
+  box-shadow: none;
   font-weight: 700;
 }
 
 .desperate-measures-open:not(:disabled) {
-  color: white;
-  background: #7b1515;
+  border-color: var(--desperate-accent-bright);
+  color: #fff;
+  background: #7b242c;
 }
 
 .desperate-measures-open:not(:disabled):hover {
@@ -125,6 +161,7 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
   display: flex;
   flex-direction: column;
   gap: 12px;
+  color: var(--desperate-window-text);
 }
 
 .desperate-measures-dialog-summary {
@@ -135,25 +172,27 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 
   padding: 10px;
 
-  border: 1px solid rgba(120, 20, 20, 0.5);
+  border: 1px solid var(--desperate-window-line);
   border-radius: 6px;
-
-  background: rgba(100, 0, 0, 0.08);
+  background: var(--desperate-window-panel-2);
 }
 
 .desperate-measures-dialog-warning {
   margin: 0;
   padding: 8px;
 
-  border-left: 3px solid #9c1a1a;
+  border-left: 3px solid var(--desperate-accent-bright);
+  background: rgb(184 66 76 / 10%);
+  color: var(--desperate-window-muted);
 
   font-size: 0.85rem;
   font-style: italic;
 }
 
 .desperate-measure-tier {
-  border: 1px solid rgba(120, 20, 20, 0.45);
+  border: 1px solid var(--desperate-window-line);
   border-radius: 6px;
+  background: var(--desperate-window-panel);
   overflow: hidden;
 }
 
@@ -164,7 +203,9 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 
   padding: 8px 10px;
 
-  background: rgba(100, 0, 0, 0.15);
+  border-bottom: 1px solid var(--desperate-window-line);
+  color: var(--desperate-window-text);
+  background: var(--desperate-window-panel-2);
 
   font-weight: 700;
 }
@@ -186,20 +227,31 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
   min-height: 52px;
   padding: 8px;
 
+  border: 1px solid #485168;
+  border-radius: 5px;
+  color: var(--desperate-window-text);
+  background: #111722;
+  box-shadow: none;
   text-align: left;
 }
 
 .desperate-measure-choice:not(:disabled) {
-  border-color: #7b1515;
+  border-color: #9f3d46;
 }
 
 .desperate-measure-choice:not(:disabled):hover {
-  background: rgba(130, 20, 20, 0.18);
+  border-color: var(--desperate-accent-bright);
+  color: #fff;
+  background: #2b1d27;
+  box-shadow: 0 0 0 1px rgb(226 103 112 / 16%);
 }
 
 .desperate-measure-choice:disabled {
   cursor: not-allowed;
-  opacity: 0.4;
+  border-color: #30384a;
+  color: #8790a1;
+  background: #191e29;
+  opacity: 1;
 }
 
 .desperate-measure-choice-icon {
@@ -213,7 +265,8 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 
   border-radius: 50%;
 
-  background: rgba(120, 15, 15, 0.18);
+  color: #ffd7da;
+  background: #5f2730;
 
   font-size: 1.1rem;
 }
@@ -229,8 +282,17 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 }
 
 .desperate-measure-choice-text small {
+  color: var(--desperate-window-muted);
   line-height: 1.25;
-  opacity: 0.75;
+}
+
+.desperate-measure-choice:disabled .desperate-measure-choice-icon {
+  color: #8790a1;
+  background: #292f3d;
+}
+
+.desperate-measure-choice:disabled .desperate-measure-choice-text small {
+  color: #7f899b;
 }
 
 .desperate-measures-confirm {
@@ -244,8 +306,10 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 .desperate-measures-confirm-warning {
   padding: 8px;
 
-  border: 1px solid #8f1717;
+  border: 1px solid var(--desperate-accent-bright);
   border-radius: 4px;
+  color: #ffd7da;
+  background: rgb(184 66 76 / 12%);
 
   font-weight: 700;
 }
@@ -301,20 +365,29 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
   width: 100%;
   padding: 9px 12px;
 
+  border: 1px solid #485168;
+  border-radius: 5px;
+  color: var(--desperate-window-text);
+  background: var(--desperate-window-panel);
+  box-shadow: none;
   text-align: left;
 }
 
 .desperate-slot-choice:not(:disabled) {
-  border-color: #7b1515;
+  border-color: #9f3d46;
 }
 
 .desperate-slot-choice:not(:disabled):hover {
-  background: rgba(130, 20, 20, 0.18);
+  border-color: var(--desperate-accent-bright);
+  background: #2b1d27;
 }
 
 .desperate-slot-choice:disabled {
   cursor: not-allowed;
-  opacity: 0.42;
+  border-color: #30384a;
+  color: #8790a1;
+  background: #191e29;
+  opacity: 1;
 }
 
 .desperate-slot-level {
@@ -328,7 +401,7 @@ body:has(#interface.theme-dark) :where(.desperate-measures-panel, .desperate-mea
 
 .desperate-slot-choice small {
   grid-column: 1 / -1;
-  opacity: 0.7;
+  color: var(--desperate-window-muted);
 }
 
 /* Desperate Measures: attack reroll chat history */

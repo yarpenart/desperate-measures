@@ -2,10 +2,12 @@
 
 Critical Role-inspired Desperate Measures module for Foundry VTT v14 Build 365 and D&amp;D5e 5.3.3.
 
-## Version 0.4.23
+## Version 0.4.24
 
-Module panels and dialogs now use light text in dark Foundry windows and dark
-text in light windows, including their buttons and helper text.
+Module panels and dialogs now use a consistent dark background with high-contrast
+light text, matching the visual language of Stat Shift regardless of the active
+Foundry theme. Disabled Desperate Measure and spell-slot choices remain readable
+through dedicated colors instead of reduced opacity.
 
 The module automatically creates one player-visible Journal Entry with a single rules-reference page. The page follows the module language selected by the primary active GM and includes:
 

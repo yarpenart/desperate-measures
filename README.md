@@ -2,7 +2,10 @@
 
 Critical Role-inspired Desperate Measures module for Foundry VTT v14 Build 365 and D&amp;D5e 5.3.3.
 
-## Version 0.4.24
+## Version 0.4.25
+
+The module manifest and JavaScript syntax have been verified for Foundry VTT
+14 Build 365.
 
 Module panels and dialogs now use a consistent dark background with high-contrast
 light text, matching the visual language of Stat Shift regardless of the active

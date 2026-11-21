@@ -13,6 +13,10 @@ export function registerActorHooks() {
         foundry.utils.hasProperty(
           changes,
           "system.attributes.hp.max"
+        ) ||
+        foundry.utils.hasProperty(
+          changes,
+          "system.attributes.hp.tempmax"
         );
 
       const deathFailuresChanged =

@@ -75,7 +75,7 @@ export class DesperateButton {
           ${t("common.hp")}:
           ${actor.system.attributes.hp.value}
           /
-          ${actor.system.attributes.hp.max}
+          ${BloodiedManager.getEffectiveMaximum(actor)}
         </span>
       </div>
 

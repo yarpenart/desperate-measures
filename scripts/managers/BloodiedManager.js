@@ -5,6 +5,12 @@ import {
 } from "../constants/constants.js";
 
 export class BloodiedManager {
+  static getEffectiveMaximum(actor) {
+    const hp = actor?.system?.attributes?.hp;
+    const maximum = Number(hp?.effectiveMax ?? (Number(hp?.max ?? 0) + Number(hp?.tempmax ?? 0)));
+    return Number.isFinite(maximum) ? Math.max(0, maximum) : 0;
+  }
+
   static getThreshold() {
     const percentage = Number(
       game.settings.get(
@@ -51,9 +57,7 @@ export class BloodiedManager {
       hp.value ?? 0
     );
 
-    const maximum = Number(
-      hp.max ?? 0
-    );
+    const maximum = this.getEffectiveMaximum(actor);
 
     if (maximum <= 0) {
       return false;

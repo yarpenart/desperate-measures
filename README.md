@@ -2,6 +2,11 @@
 
 Critical Role-inspired Desperate Measures module for Foundry VTT v14 Build 365 and D&amp;D5e 5.3.3.
 
+## Version 0.4.26
+
+The HP display and Bloodied checks use the effective maximum HP, including
+temporary changes to the maximum such as Vital Sacrifice.
+
 ## Version 0.4.25
 
 The module manifest and JavaScript syntax have been verified for Foundry VTT

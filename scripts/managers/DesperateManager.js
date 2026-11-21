@@ -1,3 +1,4 @@
+import { BloodiedManager } from "./BloodiedManager.js";
 import {
   MODULE_ID,
   SETTINGS,
@@ -152,7 +153,7 @@ export class DesperateManager {
 
     const hp = actor.system?.attributes?.hp;
     const currentHP = Number(hp?.value ?? 0);
-    const maximumHP = Number(hp?.max ?? 0);
+    const maximumHP = BloodiedManager.getEffectiveMaximum(actor);
 
     if (maximumHP <= 0) {
       return {

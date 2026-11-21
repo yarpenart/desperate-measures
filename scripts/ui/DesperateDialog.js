@@ -1,3 +1,4 @@
+import { BloodiedManager } from "../managers/BloodiedManager.js";
 import { DesperateManager }
   from "../managers/DesperateManager.js";
 
@@ -144,7 +145,7 @@ export class DesperateDialog {
             ${t("common.hp")}:
             ${actor.system.attributes.hp.value}
             /
-            ${actor.system.attributes.hp.max}
+            ${BloodiedManager.getEffectiveMaximum(actor)}
           </span>
 
           <span>
